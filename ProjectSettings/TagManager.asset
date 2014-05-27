@@ -12,14 +12,14 @@ TagManager:
   Builtin Layer 2: Ignore Raycast
   Builtin Layer 3: 
   Builtin Layer 4: Water
-  Builtin Layer 5: 
+  Builtin Layer 5: UI
   Builtin Layer 6: 
   Builtin Layer 7: 
   User Layer 8: Player
   User Layer 9: Enemy
   User Layer 10: Unimportant Background
-  User Layer 11: 
-  User Layer 12: 
+  User Layer 11: PlayerBullet
+  User Layer 12: EnemyBullet
   User Layer 13: 
   User Layer 14: 
   User Layer 15: 

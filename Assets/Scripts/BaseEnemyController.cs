@@ -20,4 +20,12 @@ public abstract class BaseEnemyController : MonoBehaviour
 		if (EnemyDied != null)
 			EnemyDied(score);
 	}
+
+	void OnCollideEnter2D(Collider2D obj)
+	{
+		if (obj.tag == "Platform")
+		{
+			rigidbody2D.isKinematic = true;
+		}
+	}
 }
