@@ -1,10 +1,11 @@
 ﻿using System;
+using Assets.Scripts;
 using UnityEngine;
 using System.Collections;
 
 [RequireComponent(typeof(Animator))]
 [UsedImplicitly]
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, IScoreContainer
 {
 	private enum PlayerTimers
 	{
@@ -25,7 +26,7 @@ public class PlayerController : MonoBehaviour
 	
 	private PlayerState _currentState = PlayerState.Alive;
 	private Animator _playerAnimator = null;
-	private bool _playerHasLanded = true;
+	public bool _playerHasLanded = true;
 
 	void Start()
 	{
@@ -36,21 +37,27 @@ public class PlayerController : MonoBehaviour
 			_timers[i] = Time.time;
 	}
 
+	public int Score { get; private set; }
+
 	public bool FacingRight { get; set; }
 
 	void Update()
-	{
+	{		
 		ProcessPlayerInput(InputController.Instance.Input);
 		ProcessCurrentState();
 	}
 
 	void OnEnable()
 	{
+		BaseEnemyController.EnemyDied += OnEnemyDied;
+
 		_playerAnimator = GetComponent<Animator>();
 	}
 
 	void OnDisable()
 	{
+		BaseEnemyController.EnemyDied -= OnEnemyDied;
+
 	}
 
 	void ProcessPlayerInput(PlayerInput input)
@@ -59,7 +66,7 @@ public class PlayerController : MonoBehaviour
 
 		if (moving)
 		{
-			bool nowFacingRight = false;
+			bool nowFacingRight;
 
 			if (input.HasFlag(PlayerInput.Left))
 			{
@@ -197,5 +204,15 @@ public class PlayerController : MonoBehaviour
 		}
 
 		return true;
+	}
+
+	private void OnEnemyDied(int score)
+	{
+		AddScore(score);
+	}
+
+	public void AddScore(int score)
+	{
+		Score += score;
 	}
 }

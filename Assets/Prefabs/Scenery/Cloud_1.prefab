@@ -9,10 +9,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 400000}
   - 212: {fileID: 21200000}
-  - 60: {fileID: 6000000}
+  - 114: {fileID: 11400000}
   m_Layer: 0
-  m_Name: Platform
-  m_TagString: Platform
+  m_Name: Cloud_1
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24,44 +24,23 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalPosition: {x: -5.46315527, y: 8.39868927, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
---- !u!60 &6000000
-PolygonCollider2D:
+--- !u!114 &11400000
+MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Poly:
-    m_Paths:
-    - - {x: -.334999979, y: -.229999989}
-      - {x: .204999998, y: -.219999999}
-      - {x: .514999986, y: -.239999995}
-      - {x: 1.05499995, y: -.370000005}
-      - {x: 1.30499995, y: -.519999981}
-      - {x: 1.30499995, y: -2.21000004}
-      - {x: 1.51499999, y: -2.21000004}
-      - {x: 1.51499999, y: -.519999981}
-      - {x: 1.52499998, y: -.519999981}
-      - {x: 1.60500002, y: -.359999985}
-      - {x: 1.77499998, y: -.159999996}
-      - {x: 1.98500001, y: -.0399999991}
-      - {x: 1.98500001, y: 0}
-      - {x: -1.98500001, y: 0}
-      - {x: -1.98500001, y: -.0399999991}
-      - {x: -1.77499998, y: -.159999996}
-      - {x: -1.52499998, y: -.48999998}
-      - {x: -1.52499998, y: -2.20000005}
-      - {x: -1.51499999, y: -2.21000004}
-      - {x: -1.30499995, y: -2.21000004}
-      - {x: -1.29499996, y: -2.20000005}
-      - {x: -1.29499996, y: -.519999981}
-      - {x: -.995000005, y: -.359999985}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67bb4d17207cfcd4295994fca8a2faee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minSize: .75
+  maxSize: 2.5
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -80,10 +59,10 @@ SpriteRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_SortingLayerID: 0
-  m_Sprite: {fileID: 21300000, guid: e77569c4b3bde1345ade9b1f9515372e, type: 3}
+  m_SortingLayer: -2
+  m_SortingOrder: 1
+  m_SortingLayerID: 2968702699
+  m_Sprite: {fileID: 21300000, guid: 78d3d23c102b04443bcdd660d3bf9964, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:

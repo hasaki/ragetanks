@@ -238,6 +238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efc13ae9e6dfd814483d54fa7125b3f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  score: 250
   DeathFxParticlePrefab: {fileID: 19800000, guid: 257ddaf6b2238af4888bbaf056ec509f,
     type: 2}
   bulletColliderListener: {fileID: 11400008}

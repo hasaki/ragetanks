@@ -3,7 +3,7 @@ using UnityEngine;
 using System.Collections;
 using Random = UnityEngine.Random;
 
-public class BasicEnemyController : MonoBehaviour
+public class BasicEnemyController : BaseEnemyController
 {
 	public ParticleSystem DeathFxParticlePrefab = null;
 
@@ -12,6 +12,8 @@ public class BasicEnemyController : MonoBehaviour
 	public float walkingSpeed = 0.45f;
 
 	private bool _walkingLeft = true;
+
+	private bool alive = true;
 
 	void Start()
 	{
@@ -50,6 +52,16 @@ public class BasicEnemyController : MonoBehaviour
 
 	public void HitByPlayerBullet()
 	{
+		Die();
+	}
+
+	private void Die()
+	{
+		if (!alive)
+			return;
+		
+		alive = false;
+
 		var deathFx = Instantiate(DeathFxParticlePrefab) as ParticleSystem;
 
 		if (deathFx != null)
@@ -58,6 +70,8 @@ public class BasicEnemyController : MonoBehaviour
 			var particlePostion = new Vector3(enemyPos.x, enemyPos.y, enemyPos.z + 1f);
 			deathFx.transform.position = particlePostion;
 		}
+
+		OnEnemyDied();
 
 		Destroy(gameObject, 0.1f);
 	}

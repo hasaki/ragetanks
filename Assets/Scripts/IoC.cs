@@ -23,9 +23,8 @@ public class IoC : MonoBehaviour
 		get { return _container.Value; }
 	}
 
-	public static void EnsureContainerCreated()
+	public static TinyIoCContainer EnsureContainerCreated()
 	{
-		// ReSharper disable once UnusedVariable
-		var container = _container.Value;
+		return _container.Value;
 	}
 }
