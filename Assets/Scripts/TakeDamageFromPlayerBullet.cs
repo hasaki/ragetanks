@@ -1,22 +1,26 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using RageTanks.Annotations;
+using UnityEngine;
 
-public class TakeDamageFromPlayerBullet : MonoBehaviour
+namespace RageTanks
 {
-	public delegate void HitByPlayerBullet();
-	public event HitByPlayerBullet HitByBullet;
-
-	void OnTriggerEnter2D(Collider2D collidedObject)
+	public class TakeDamageFromPlayerBullet : MonoBehaviour
 	{
-		if (collidedObject.tag == "PlayerBullet")
+		public delegate void HitByPlayerBullet();
+		public event HitByPlayerBullet HitByBullet;
+
+		[UsedImplicitly]
+		void OnTriggerEnter2D(Collider2D collidedObject)
 		{
-			OnHitByPlayerBullet();
+			if (collidedObject.tag == "PlayerBullet")
+			{
+				OnHitByPlayerBullet();
+			}
 		}
-	}
 
-	protected void OnHitByPlayerBullet()
-	{
-		if (HitByBullet != null)
-			HitByBullet();
+		protected void OnHitByPlayerBullet()
+		{
+			if (HitByBullet != null)
+				HitByBullet();
+		}
 	}
 }

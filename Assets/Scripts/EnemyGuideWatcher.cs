@@ -1,25 +1,31 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using RageTanks.Annotations;
+using UnityEngine;
 
-public class EnemyGuideWatcher : MonoBehaviour
+namespace RageTanks
 {
-	private int _enemyLayer = 0;
-	public BasicEnemyController enemyObject;
-
-	void Start()
+	public class EnemyGuideWatcher : MonoBehaviour
 	{
-		_enemyLayer = UnityEngine.LayerMask.NameToLayer("Enemy");
-	}
+		private int _enemyLayer = 0;
+		public BasicEnemyController enemyObject;
 
-	void OnTriggerEnter2D(Collider2D obj)
-	{
-		if(obj.gameObject.layer == _enemyLayer)
-			enemyObject.SwitchDirections();
-	}
+		[UsedImplicitly]
+		void Start()
+		{
+			_enemyLayer = UnityEngine.LayerMask.NameToLayer("Enemy");
+		}
 
-	void OnTriggerExit2D(Collider2D obj)
-	{
-		if (obj.tag == "Platform")
-			enemyObject.SwitchDirections();
+		[UsedImplicitly]
+		void OnTriggerEnter2D(Collider2D obj)
+		{
+			if(obj.gameObject.layer == _enemyLayer)
+				enemyObject.SwitchDirections();
+		}
+
+		[UsedImplicitly]
+		void OnTriggerExit2D(Collider2D obj)
+		{
+			if (obj.tag == "Platform")
+				enemyObject.SwitchDirections();
+		}
 	}
 }

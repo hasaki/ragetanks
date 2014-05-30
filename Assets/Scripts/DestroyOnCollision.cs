@@ -1,13 +1,17 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using RageTanks.Annotations;
+using UnityEngine;
 
-public class DestroyOnCollision : MonoBehaviour
+namespace RageTanks
 {
-	void OnTriggerEnter2D(Collider2D hitObj)
+	public class DestroyOnCollision : MonoBehaviour
 	{
-		if (hitObj.tag == "Platform")
+		[UsedImplicitly]
+		void OnTriggerEnter2D(Collider2D hitObj)
 		{
-			DestroyObject(gameObject);
+			if (hitObj.tag == "Platform")
+				DestroyObject(gameObject);
+			else if (hitObj.tag == "Enemy")
+				Destroy(gameObject, 0.01f); // Destroy the bullet after its hit the enemy
 		}
 	}
 }

@@ -1,0 +1,27 @@
+
+vortex.png
+size: 272,238
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Vortex_Back
+  rotate: false
+  xy: 0, 91
+  size: 158, 145
+  orig: 158, 145
+  offset: 0, 0
+  index: -1
+Vortex_Center
+  rotate: false
+  xy: 0, 0
+  size: 106, 89
+  orig: 106, 89
+  offset: 0, 0
+  index: -1
+Vortex_Front
+  rotate: false
+  xy: 160, 120
+  size: 110, 116
+  orig: 110, 116
+  offset: 0, 0
+  index: -1
