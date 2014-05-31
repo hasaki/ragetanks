@@ -1,44 +1,46 @@
 ﻿using UnityEngine;
-using System.Collections;
 
-public class ParallaxController : MonoBehaviour
+namespace RageTanks
 {
-	public GameObject[] clouds;
-	public GameObject[] nearHills;
-	public GameObject[] farHills;
-
-	public float cloudLayerSpeedModifier;
-	public float nearHillsLayerSpeedModifier;
-	public float farHillsLayerSpeedModifier;
-
-	public Camera playerCamera;
-
-	private Vector3 _lastCameraPosition;
-
-	void Start()
+	public class ParallaxController : MonoBehaviour
 	{
-		_lastCameraPosition = playerCamera.transform.position;
-	}
+		public GameObject[] clouds;
+		public GameObject[] nearHills;
+		public GameObject[] farHills;
 
-	void Update()
-	{
-		var currentPosition = playerCamera.transform.position;
-		var xPosDiff = _lastCameraPosition.x - currentPosition.x;
+		public float cloudLayerSpeedModifier;
+		public float nearHillsLayerSpeedModifier;
+		public float farHillsLayerSpeedModifier;
 
-		AdjustParalaxPositionsForArray(clouds, cloudLayerSpeedModifier, xPosDiff);
-		AdjustParalaxPositionsForArray(nearHills, nearHillsLayerSpeedModifier, xPosDiff);
-		AdjustParalaxPositionsForArray(farHills, farHillsLayerSpeedModifier, xPosDiff);
+		public Camera playerCamera;
 
-		_lastCameraPosition = currentPosition;
-	}
+		private Vector3 _lastCameraPosition;
 
-	void AdjustParalaxPositionsForArray(GameObject[] layerArray, float speedModifier, float distance)
-	{
-		for (var index = 0; index < layerArray.Length; index++)
+		void Start()
 		{
-			var currentPosition = layerArray[index].transform.position;
-			currentPosition.x = currentPosition.x + distance*speedModifier;
-			layerArray[index].transform.position = currentPosition;
+			_lastCameraPosition = playerCamera.transform.position;
+		}
+
+		void Update()
+		{
+			var currentPosition = playerCamera.transform.position;
+			var xPosDiff = _lastCameraPosition.x - currentPosition.x;
+
+			AdjustParalaxPositionsForArray(clouds, cloudLayerSpeedModifier, xPosDiff);
+			AdjustParalaxPositionsForArray(nearHills, nearHillsLayerSpeedModifier, xPosDiff);
+			AdjustParalaxPositionsForArray(farHills, farHillsLayerSpeedModifier, xPosDiff);
+
+			_lastCameraPosition = currentPosition;
+		}
+
+		void AdjustParalaxPositionsForArray(GameObject[] layerArray, float speedModifier, float distance)
+		{
+			for (var index = 0; index < layerArray.Length; index++)
+			{
+				var currentPosition = layerArray[index].transform.position;
+				currentPosition.x = currentPosition.x + distance*speedModifier;
+				layerArray[index].transform.position = currentPosition;
+			}
 		}
 	}
 }

@@ -1,21 +1,23 @@
 ﻿using UnityEngine;
-using System.Collections;
 
-public class RandomSizingBehavior : MonoBehaviour
+namespace RageTanks
 {
-	public float minSize = 0.75f;
-	public float maxSize = 2.5f;
-
-	// Use this for initialization
-	void Start()
+	public class RandomSizingBehavior : MonoBehaviour
 	{
-		var scale = gameObject.transform.localScale;
+		public float minSize = 0.75f;
+		public float maxSize = 2.5f;
 
-		var size = Random.Range(minSize, maxSize);
+		// Use this for initialization
+		void Start()
+		{
+			var scale = gameObject.transform.localScale;
 
-		scale.x = size;
-		scale.y = size;
+			var size = Random.Range(minSize, maxSize);
 
-		gameObject.transform.localScale = scale;
+			scale.x = size;
+			scale.y = size;
+
+			gameObject.transform.localScale = scale;
+		}
 	}
 }

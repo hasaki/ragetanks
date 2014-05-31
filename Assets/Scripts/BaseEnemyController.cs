@@ -1,31 +1,31 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using UnityEngine;
 
-public abstract class BaseEnemyController : MonoBehaviour
+namespace RageTanks
 {
-	public static event Action<int> EnemyDied;
-
-	public int score;
-
-	public BaseEnemyController()
+	public abstract class BaseEnemyController : MonoBehaviour
 	{
-		score = 25;
-	}
+		public static event Action<int> EnemyDied;
 
-	protected void OnEnemyDied()
-	{
-		if (EnemyDied != null)
-			EnemyDied(score);
-	}
+		public int score;
 
-	void OnCollideEnter2D(Collider2D obj)
-	{
-		if (obj.tag == "Platform")
+		public BaseEnemyController()
 		{
-			rigidbody2D.isKinematic = true;
+			score = 25;
+		}
+
+		protected void OnEnemyDied()
+		{
+			if (EnemyDied != null)
+				EnemyDied(score);
+		}
+
+		void OnCollideEnter2D(Collider2D obj)
+		{
+			if (obj.tag == "Platform")
+			{
+				rigidbody2D.isKinematic = true;
+			}
 		}
 	}
 }

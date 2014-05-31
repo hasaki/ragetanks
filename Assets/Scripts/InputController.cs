@@ -1,44 +1,46 @@
-﻿using UnityEngine;
-using System;
-using System.Collections;
+﻿using System;
+using UnityEngine;
 
-public class InputController : MonoBehaviour
+namespace RageTanks
 {
-	public static InputController Instance { get; private set; }
+	public class InputController : MonoBehaviour
+	{
+		public static InputController Instance { get; private set; }
 	
-	void OnEnable()
-	{
-		Instance = this;
-	}
-
-	public PlayerInput Input { get; private set; }
-
-	void Update()
-	{
-		var input = PlayerInput.None;
-
-		// Detect the current input of the Horizontal axis, then
-		// broadcast a state update for the player as needed.
-		// Do this on each frame to make sure the state is always
-		// set properly based on the current user input.
-		var horizontal = UnityEngine.Input.GetAxis("Horizontal");
-		if(Math.Abs(horizontal) > float.Epsilon)
+		void OnEnable()
 		{
-			input |= horizontal < 0 ? PlayerInput.Left : PlayerInput.Right;
+			Instance = this;
 		}
 
-		var jump = UnityEngine.Input.GetButton("Jump");
-		if (jump)
-		{
-			input |= PlayerInput.Jump;
-		}
+		public PlayerInput Input { get; private set; }
 
-		var fire = UnityEngine.Input.GetButton("Fire1");
-		if (fire)
+		void Update()
 		{
-			input |= PlayerInput.Fire;
-		}
+			var input = PlayerInput.None;
 
-		Input = input;
+			// Detect the current input of the Horizontal axis, then
+			// broadcast a state update for the player as needed.
+			// Do this on each frame to make sure the state is always
+			// set properly based on the current user input.
+			var horizontal = UnityEngine.Input.GetAxis("Horizontal");
+			if(Math.Abs(horizontal) > float.Epsilon)
+			{
+				input |= horizontal < 0 ? PlayerInput.Left : PlayerInput.Right;
+			}
+
+			var jump = UnityEngine.Input.GetButton("Jump");
+			if (jump)
+			{
+				input |= PlayerInput.Jump;
+			}
+
+			var fire = UnityEngine.Input.GetButton("Fire1");
+			if (fire)
+			{
+				input |= PlayerInput.Fire;
+			}
+
+			Input = input;
+		}
 	}
 }

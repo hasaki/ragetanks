@@ -1,4 +1,4 @@
-﻿namespace Commands
+﻿namespace RageTanks.Commands
 {
 	public interface ICommand
 	{

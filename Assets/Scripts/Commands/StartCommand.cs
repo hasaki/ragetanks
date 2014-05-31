@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Commands
+namespace RageTanks.Commands
 {
 	class StartCommand : MonoBehaviour, ICommand
 	{

@@ -1,20 +1,22 @@
 ﻿using UnityEngine;
-using System.Collections;
 
-public class DeathTrigger : MonoBehaviour
+namespace RageTanks
 {
-	private int _playerLayer;
-
-	void Start()
+	public class DeathTrigger : MonoBehaviour
 	{
-		_playerLayer = UnityEngine.LayerMask.NameToLayer("Player");
-	}
+		private int _playerLayer;
 
-	void OnTriggerEnter2D(Collider2D collideObject)
-	{
-		if (collideObject.gameObject.layer == _playerLayer)
+		void Start()
 		{
-			collideObject.SendMessage("DeathTriggerHit", SendMessageOptions.DontRequireReceiver);
+			_playerLayer = UnityEngine.LayerMask.NameToLayer("Player");
+		}
+
+		void OnTriggerEnter2D(Collider2D collideObject)
+		{
+			if (collideObject.gameObject.layer == _playerLayer)
+			{
+				collideObject.SendMessage("DeathTriggerHit", SendMessageOptions.DontRequireReceiver);
+			}
 		}
 	}
 }

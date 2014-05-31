@@ -1,30 +1,31 @@
-﻿using Assets.Scripts.Shims;
-using Commands;
+﻿using RageTanks.Shims;
 using TinyIoC;
 using UnityEngine;
-using System.Collections;
 
-public class IoC : MonoBehaviour
+namespace RageTanks
 {
-	// ReSharper disable once InconsistentNaming
-	private static readonly Lazy<TinyIoC.TinyIoCContainer> _container = new Lazy<TinyIoCContainer>(Initialize);
-
-	private static TinyIoCContainer Initialize()
+	public class IoC : MonoBehaviour
 	{
-		var container = TinyIoCContainer.Current;
+		// ReSharper disable once InconsistentNaming
+		private static readonly Lazy<TinyIoC.TinyIoCContainer> _container = new Lazy<TinyIoCContainer>(Initialize);
 
-		container.AutoRegister();
+		private static TinyIoCContainer Initialize()
+		{
+			var container = TinyIoCContainer.Current;
 
-		return container;
-	}
+			container.AutoRegister();
 
-	public static TinyIoCContainer Container
-	{
-		get { return _container.Value; }
-	}
+			return container;
+		}
 
-	public static TinyIoCContainer EnsureContainerCreated()
-	{
-		return _container.Value;
+		public static TinyIoCContainer Container
+		{
+			get { return _container.Value; }
+		}
+
+		public static TinyIoCContainer EnsureContainerCreated()
+		{
+			return _container.Value;
+		}
 	}
 }

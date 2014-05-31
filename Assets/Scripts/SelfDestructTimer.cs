@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets.Scripts
+namespace RageTanks
 {
 	public class SelfDestructTimer : MonoBehaviour
 	{

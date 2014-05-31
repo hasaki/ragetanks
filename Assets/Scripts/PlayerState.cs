@@ -1,12 +1,12 @@
-﻿using UnityEngine;
-using System.Collections;
-
-public enum PlayerState
+﻿namespace RageTanks
 {
-	Alive = 0,
-	Jump,
-	Landing,
-	Falling,
-	Dead,
-	Resurrecting
+	public enum PlayerState
+	{
+		Alive = 0,
+		Jump,
+		Landing,
+		Falling,
+		Dead,
+		Resurrecting
+	}
 }

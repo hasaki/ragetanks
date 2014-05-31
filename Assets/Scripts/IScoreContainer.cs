@@ -1,4 +1,4 @@
-﻿namespace Assets.Scripts
+﻿namespace RageTanks
 {
 	public interface IScoreContainer
 	{
