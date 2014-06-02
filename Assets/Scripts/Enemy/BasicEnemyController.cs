@@ -3,7 +3,7 @@ using RageTanks.Annotations;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace RageTanks
+namespace RageTanks.Enemy
 {
 	public class BasicEnemyController : BaseEnemyController
 	{
@@ -74,7 +74,7 @@ namespace RageTanks
 				deathFx.transform.position = particlePostion;
 			}
 
-			OnEnemyDied();
+			OnEnemyDied(EnemyType.BasicEnemy);
 
 			Destroy(gameObject, 0.1f);
 		}

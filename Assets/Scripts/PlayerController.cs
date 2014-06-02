@@ -1,5 +1,6 @@
 ﻿using System;
 using RageTanks.Annotations;
+using RageTanks.Enemy;
 using UnityEngine;
 
 namespace RageTanks
@@ -210,7 +211,7 @@ namespace RageTanks
 			return true;
 		}
 
-		private void OnEnemyDied(int score)
+		private void OnEnemyDied(int score, EnemyType type)
 		{
 			AddScore(score);
 		}
