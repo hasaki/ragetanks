@@ -1,0 +1,443 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3F36EA80-2F9A-4DAD-BA27-5AC6163A2EE3}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>StructureMap</AssemblyName>
+    <AssemblyOriginatorKeyFile>..\structuremap.snk</AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>StructureMap</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <SignAssembly>true</SignAssembly>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>bin\Debug\StructureMap.XML</DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>618,1591,1573,1711,1570</NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>bin\Release\StructureMap.XML</DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>618,1591,1573,1711,1570</NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>pdbonly</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Build|AnyCPU' ">
+    <OutputPath>..\..\build\StructureMap\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>StructureMap.xml</DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>618, 1591</NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Web">
+      <Name>System.Web</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\CommonAssemblyInfo.cs">
+      <Link>CommonAssemblyInfo.cs</Link>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BuildSession.cs" />
+    <Compile Include="Configuration\DSL\Expressions\GenericFamilyExpression.cs" />
+    <Compile Include="Configuration\ProfileBuilder.cs" />
+    <Compile Include="Diagnostics\BuildError.cs" />
+    <Compile Include="Diagnostics\CharacterWidth.cs" />
+    <Compile Include="Diagnostics\DividerLine.cs" />
+    <Compile Include="Diagnostics\Error.cs" />
+    <Compile Include="Diagnostics\ErrorCollection.cs" />
+    <Compile Include="Diagnostics\GraphLog.cs" />
+    <Compile Include="Diagnostics\InstanceToken.cs" />
+    <Compile Include="Diagnostics\Line.cs" />
+    <Compile Include="Diagnostics\TextLine.cs" />
+    <Compile Include="Diagnostics\TextReportWriter.cs" />
+    <Compile Include="Diagnostics\WhatDoIHaveWriter.cs" />
+    <Compile Include="Exceptions\StructureMapConfigurationException.cs" />
+    <Compile Include="ExplicitArgsExpression.cs" />
+    <Compile Include="Graph\Constructor.cs" />
+    <Compile Include="Graph\IArgumentVisitor.cs" />
+    <Compile Include="Graph\IPluginFamily.cs" />
+    <Compile Include="Graph\AssemblyScanner.cs" />
+    <Compile Include="InstanceCache.cs" />
+    <Compile Include="Interceptors\MatchedTypeInterceptor.cs" />
+    <Compile Include="PipelineGraph.cs" />
+    <Compile Include="Pipeline\ConfiguredInstance.cs" />
+    <Compile Include="Pipeline\ConfiguredInstance.Expressions.cs" />
+    <Compile Include="Pipeline\LambdaInstance.cs" />
+    <Compile Include="Pipeline\DefaultInstance.cs" />
+    <Compile Include="Pipeline\IConfiguredInstance.cs" />
+    <Compile Include="Pipeline\ILocationPolicy.cs" />
+    <Compile Include="Pipeline\Instance.cs" />
+    <Compile Include="Pipeline\InstanceMementoPropertyReader.cs" />
+    <Compile Include="Pipeline\ObjectInstance.cs" />
+    <Compile Include="Pipeline\Profile.cs" />
+    <Compile Include="Pipeline\ProfileManager.cs" />
+    <Compile Include="Pipeline\PrototypeInstance.cs" />
+    <Compile Include="Pipeline\ReferencedInstance.cs" />
+    <Compile Include="Pipeline\UserControlInstance.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Attributes\DefaultConstructorAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="InstanceScope.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Attributes\PluggableAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Attributes\PluginFamilyAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Attributes\SetterPropertyAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Attributes\ValidationMethodAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\ConfigurationConstants.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\ConfigurationParser.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\ConfigurationParserBuilder.cs" />
+    <Compile Include="Configuration\DSL\Expressions\CreatePluginFamilyExpression.cs" />
+    <Compile Include="Configuration\DSL\ExpressionValidator.cs" />
+    <Compile Include="Pipeline\ExplicitArguments.cs" />
+    <Compile Include="Configuration\DSL\Expressions\ProfileExpression.cs" />
+    <Compile Include="Configuration\DSL\Registry.cs" />
+    <Compile Include="Configuration\FamilyParser.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\IGraphBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\GraphBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\ProfileAndMachineParser.cs" />
+    <Compile Include="Configuration\StructureMapConfigurationSection.cs" />
+    <Compile Include="Configuration\XmlConstants.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Exceptions\InstancePropertyValueException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Exceptions\MissingPluginFamilyException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Exceptions\StructureMapException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Graph\GenericsPluginGraph.cs" />
+    <Compile Include="Graph\Plugin.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Graph\PluginFamily.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Graph\PluginFamilyCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Graph\PluginGraph.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Graph\SetterProperty.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Graph\SetterPropertyCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Graph\TypePath.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IInstanceFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IContainer.cs" />
+    <Compile Include="InstanceFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Container.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="InstanceMemento.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Interceptors\CompoundInterceptor.cs" />
+    <Compile Include="Interceptors\EnrichmentInterceptor.cs" />
+    <Compile Include="Interceptors\InstanceInterceptor.cs" />
+    <Compile Include="Interceptors\InterceptorLibrary.cs" />
+    <Compile Include="Interceptors\Interceptors.cs" />
+    <Compile Include="Interceptors\NulloInterceptor.cs" />
+    <Compile Include="Interceptors\StartupInterceptor.cs" />
+    <Compile Include="Interceptors\FilteredInstanceInterceptor.cs" />
+    <Compile Include="MementoSource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MemoryInstanceMemento.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ObjectFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PluginGraphBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Source\BasicXmlMementoSource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Source\DirectoryXmlMementoSource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Source\EmbeddedFolderXmlMementoSource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Source\MementoSourceType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Source\MemoryMementoSource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Source\SingleEmbeddedXmlMementoSource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Source\TemplatedMementoSource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Source\XmlAttributeFileMementoSource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Source\XmlAttributeInstanceMemento.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Source\XmlFileMementoSource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Source\XmlMementoCreator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Source\XmlMementoSource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Source\XmlMementoStyle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Source\XmlNodeInstanceMemento.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Source\XmlTemplater.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Diagnostics\ValidationBuildSession.cs" />
+    <EmbeddedResource Include="StructureMapException.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\structuremap.snk">
+      <Link>Properties\structuremap.snk</Link>
+    </None>
+    <None Include="ConfigurationClasses.cd" />
+    <Compile Include="CloseGenericTypeExpression.cs" />
+    <Compile Include="ConfigurationExpression.cs" />
+    <Compile Include="Configuration\DictionaryReader.cs" />
+    <Compile Include="Configuration\DSL\Expressions\InstanceExpression.cs" />
+    <Compile Include="Configuration\DSL\IRegistry.cs" />
+    <Compile Include="Configuration\DSL\SetterConvention.cs" />
+    <Compile Include="Configuration\ITypeReader.cs" />
+    <Compile Include="Configuration\PrimitiveArrayReader.cs" />
+    <Compile Include="Configuration\TypeReaderFactory.cs" />
+    <Compile Include="Configuration\XmlExtensions.cs" />
+    <Compile Include="Construction\BuilderCompiler.cs" />
+    <Compile Include="Construction\ConstructorFunctionBuilder.cs" />
+    <Compile Include="Construction\IArguments.cs" />
+    <Compile Include="Construction\InstanceBuilder.cs" />
+    <Compile Include="Construction\SetterBuilder.cs" />
+    <Compile Include="Diagnostics\Doctor.cs" />
+    <Compile Include="Diagnostics\DoctorReport.cs" />
+    <Compile Include="Diagnostics\DoctorResult.cs" />
+    <Compile Include="Diagnostics\DoctorRunner.cs" />
+    <Compile Include="Diagnostics\ValidationError.cs" />
+    <Compile Include="ErrorMessages.cs" />
+    <Compile Include="Example.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="Graph\CompositeFilter.cs" />
+    <Compile Include="Graph\CompositePredicate.cs" />
+    <Compile Include="Configuration\DSL\Expressions\ConfigureConventionExpression.cs" />
+    <Compile Include="Graph\FamilyAttributeScanner.cs" />
+    <Compile Include="Graph\FindAllTypesFilter.cs" />
+    <Compile Include="Graph\FindRegistriesScanner.cs" />
+    <Compile Include="Graph\FirstInterfaceConvention.cs" />
+    <Compile Include="Graph\IAssemblyScanner.cs" />
+    <Compile Include="Graph\ImplementationMap.cs" />
+    <Compile Include="Graph\IRegistrationConvention.cs" />
+    <Compile Include="Graph\ITypeScanner.cs" />
+    <Compile Include="Graph\PluggableAttributeScanner.cs" />
+    <Compile Include="Graph\PluginCache.cs" />
+    <Compile Include="IContext.cs" />
+    <Compile Include="Pipeline\AdapterClasses.cs" />
+    <Compile Include="Pipeline\HybridLifecycle.cs" />
+    <Compile Include="Query\EmptyConfiguration.cs" />
+    <Compile Include="Query\GenericFamilyConfiguration.cs" />
+    <Compile Include="Query\IFamily.cs" />
+    <Compile Include="Query\IModel.cs" />
+    <Compile Include="Pipeline\Arguments.cs" />
+    <Compile Include="Pipeline\ArrayCoercion.cs" />
+    <Compile Include="Pipeline\ConditionalInstance.cs" />
+    <Compile Include="Pipeline\ConstructorInstance.cs" />
+    <Compile Include="Pipeline\EnumerableInstance.cs" />
+    <Compile Include="Pipeline\HttpContextLifecycle.cs" />
+    <Compile Include="Pipeline\HttpLifecycleBase.cs" />
+    <Compile Include="Pipeline\HttpSessionLifecycle.cs" />
+    <Compile Include="Pipeline\HybridSessionLifecycle.cs" />
+    <Compile Include="Pipeline\IEnumerableCoercion.cs" />
+    <Compile Include="Pipeline\ILifecycle.cs" />
+    <Compile Include="Pipeline\IObjectCache.cs" />
+    <Compile Include="Pipeline\Lifecycles.cs" />
+    <Compile Include="Pipeline\ListCoercion.cs" />
+    <Compile Include="Pipeline\MainObjectCache.cs" />
+    <Compile Include="Pipeline\NulloObjectCache.cs" />
+    <Compile Include="Pipeline\ObjectBuilder.cs" />
+    <Compile Include="Pipeline\SessionWrapper.cs" />
+    <Compile Include="Pipeline\SingletonLifecycle.cs" />
+    <Compile Include="Pipeline\ThreadLocalStorageLifecycle.cs" />
+    <Compile Include="Pipeline\UniquePerRequestLifecycle.cs" />
+    <Compile Include="Query\InstanceFactoryTypeConfiguration.cs" />
+    <Compile Include="Query\InstanceRef.cs" />
+    <Compile Include="Query\IPluginTypeConfiguration.cs" />
+    <Compile Include="TypeExtensions.cs" />
+    <Compile Include="IBootstrapper.cs" />
+    <Compile Include="InitializationExpression.cs" />
+    <Compile Include="Query\Model.cs" />
+    <Compile Include="Pipeline\BuildFrame.cs" />
+    <Compile Include="Pipeline\BuildStack.cs" />
+    <Compile Include="Pipeline\ConfiguredInstanceBase.cs" />
+    <Compile Include="Pipeline\InstanceKey.cs" />
+    <Compile Include="Pipeline\IStructuredInstance.cs" />
+    <Compile Include="Pipeline\PropertyExpression.cs" />
+    <Compile Include="Pipeline\SerializedInstance.cs" />
+    <Compile Include="Pipeline\SmartInstance.cs" />
+    <Compile Include="ReflectionHelper.cs" />
+    <Compile Include="SystemRegistry.cs" />
+    <Compile Include="Util\Cache.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using RageTanks.Annotations;
+using UnityEngine;
 
 namespace RageTanks
 {
@@ -8,6 +9,7 @@ namespace RageTanks
 		public float maxSize = 2.5f;
 
 		// Use this for initialization
+		[UsedImplicitly]
 		void Start()
 		{
 			var scale = gameObject.transform.localScale;

@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: a3a18dea1c4d3ac40b885f9c55bcd18f
+labels:
+- tile
+- align
+- easysnap
+- snapping
+- grid
+- snap
+- easy
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
